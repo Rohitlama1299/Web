@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine?</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <style>
+    /* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffebee; /* Light pink background */
+    color: #d32f2f; /* Dark red text */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .page {
+    background-color: #ffffff; /* White container */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    position: relative;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  button {
+    background-color: #d32f2f; /* Dark red button */
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #b71c1c; /* Darker red on hover */
+  }
+  
+  button i {
+    margin-left: 0.5rem;
+  }
+  
+  .icons {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    font-size: 2rem;
+    color: #d32f2f;
+  }
+  
+  input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid #d32f2f;
+    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #b71c1c;
+  }
+  
+  .answerButton {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .answerButton:hover {
+    background-color: #b71c1c;
+  }
+  
+  #errorMessage {
+    color: #ff1744;
+    font-weight: bold;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+  
+  #finalResponse {
+    font-size: 1.5rem;
+    color: #d32f2f;
+    margin-top: 1rem;
+  }
+  
+  #happyCat {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+  }
+  
+      body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+    }
+
+    .page {
+      display: none;
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .answerButton {
+      display: block;
+      margin: 10px auto;
+      padding: 15px;
+      font-size: 1.1rem;
+      background-color: #ff5c8d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 80%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .answerButton:hover {
+      background-color: #e4496d;
+    }
+
+    #errorAnswer, #errorMessage {
+      color: red;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    .icons {
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+
+    #finalResponse {
+      font-size: 1.5rem;
+      color: #ff5c8d;
+    }
+
+     /* Mobile Responsiveness */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.6rem; /* Adjusting font size for smaller screens */
+    line-height: 1.3; /* Ensures heading has some breathing room */
+    margin-bottom: 10px; /* Reduces margin so it fits better */
+  }
+
+  .answerButton {
+    font-size: 1rem; /* Adjust button text size for smaller screens */
+    padding: 12px;
+  }
+
+  .icons {
+    font-size: 1.5rem; /* Adjust icon size for smaller screens */
+  }
+
+  #finalResponse {
+    font-size: 1.2rem; /* Adjust final response text size */
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.3rem; /* Further adjustment for very small screens */
+    margin-bottom: 8px; /* More compact space for tiny screens */
+  }
+
+  .answerButton {
+    font-size: 0.9rem; /* Further adjustment for buttons */
+    padding: 10px;
+  }
+
+  .icons {
+    font-size: 1.2rem; /* Adjust icons for very small screens */
+  }
+
+  #finalResponse {
+    font-size: 1rem; /* Smaller text size for the final response */
+  }
+}
+
+
+    /* Popup Styles */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgb(239, 182, 209);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      display: none;
+    }
+
+    .popup img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .popup p {
+      font-size: 1.2rem;
+      color: #d32f2f;
+      margin-bottom: 10px;
+    }
+
+    .popup button {
+      background-color: #d32f2f;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup button:hover {
+      background-color: #b71c1c;
+    }
+  </style>
+</head>
+<body>
+  <!-- Page 1 -->
+  <div id="page1" class="page active">
+    <h1>Who Do We Have Here? 🧐</h1>
+    <img src="https://media4.giphy.com/media/pNsT0jiaiPqZr8AOGU/giphy.gif" alt="Cat Holding a Letter">
+    <p><b>Tell me your name, and I might let you pass. 😼</b></p>
+    <input id="nameInput" type="text" placeholder="Enter your name... Don't be shy!">
+    <button id="nameSubmit">Okay, let's go! </button>
+  </div>
+
+  <!-- Page 2: Quiz - What Do I Like About You? -->
+<div id="questionPage" class="page hidden">
+    <img id="questionCat" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Thinking Cat">
+    <p><b>Tell me what do I *absolutely* adore about you?</b></p>
+    <button class="answerButton" data-answer="eyes">Those Gorgeous Eyes 👀</button>
+    <button class="answerButton" data-answer="cheeks">Your Cheeks (Yes, I'm staring) 😘</button>
+    <button class="answerButton" data-answer="lips">Those Lips! 😚</button>
+    <button class="answerButton" data-answer="all">All of the Above (A.K.A. You’re Perfect 😏)</button>
+    <p id="errorAnswer" class="hidden">Oops... that's not it. Try again, Moti! 😜</p>
+  </div>
+  
+
+  <!-- Popup for Incorrect Answer -->
+  <div id="errorPopup" class="popup">
+    <img src="https://media.giphy.com/media/5xtDarEgBDjEoWo6VRS/giphy.gif?cid=790b7611e7e50f2t8p8we0yk1wu04nmh6bvid5tuhv1mqs96&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Cat Holding Envelope">
+    <p id="errorText">Byeee... This message is not for you. So you are kindly requested to leave this site👋.</p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+
+  <!-- Popup for Correct Answer (Page 1) -->
+  <div id="correctPopup" class="popup">
+    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExampiaWJ1NnU4ODY5bG01bDg2c3Via3U0M3RhdWY4dWs1MXQ5bWh5cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ANbD1CCdA3iI8/giphy.gif" alt="Suspicious Cat">
+    <p>Hmmm... I'm still not convinced. 🤨</p>
+  </div>
+
+  <!-- Correct Answer Page (After Page 2) -->
+  <div id="correctPage" class="page hidden">
+    <h1>It’s REALLY You, Pratikshya! Welcome! 🎉</h1>
+    <img id="welcomeCat" src="https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif" alt="Welcoming Cat">
+    <button id="proceedButton">Proceed to Awesomeness <i class="fas fa-arrow-right"></i></button>
+  </div>
+
+  <!-- Original First Page (After Correct Answer) -->
+  <div id="page1AfterCorrect" class="page hidden">
+    <img id="questionCat" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2d3bTZ3YTZveTVmYmJhZjFwaTN1Y3lmcGJqNHEzdGIzZ3Njb2FmeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/z1HitrABsfTgs/giphy.gif" alt="Thinking Cat">
+    <h1>Oi Fuchii, 😏</h1>
+    <p>Arko page ma momo xa khane baye press the Button 🤣🍽️💓</p>
+    <button id="finalButton">Khane..! <i class="fas fa-heart"></i></button>
+    <div class="icons">
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-cat"></i>
+      <i class="fas fa-paw"></i>
+    </div>
+  </div>
+
+  <!-- Final Page -->
+<div id="finalPage" class="page hidden">
+    <h1>Sorry 😅, There is no momo here but there is somethings for you!!😳</h1>
+    <img id="bear" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnRvbHNsaTByeWMxOHFnZDJ1cHZ2czJuMXMxM3VuaTYxemd0ajF1NSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MUS1XdqBxh09qvh78X/giphy.gif" alt="soemthings">
+    <p>
+        
+    </p>
+    <button id="yesButton">Next page</button>
+</div>
+
+  <script>
+
+
+// Page 1 Name Validation
+document.getElementById("nameSubmit").addEventListener("click", function() {
+      const name = document.getElementById("nameInput").value.trim().toLowerCase();
+      if (name === "pratikshya") {
+        showCorrectPopup();
+        setTimeout(function() {
+          document.getElementById("page1").classList.add("hidden");
+          document.getElementById("questionPage").classList.remove("hidden");
+        }, 3000);
+      } else {
+        showErrorPopup("Oops! This message is not for you. So you are kindly requested to leave this site👋.");
+      }
+    });
+
+    // Show Error Popup
+    function showErrorPopup(message) {
+      document.getElementById("errorText").innerText = message;
+      document.getElementById("errorPopup").style.display = "block";
+    }
+
+    // Show Correct Popup
+    function showCorrectPopup() {
+      document.getElementById("correctPopup").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("correctPopup").style.display = "none";
+      }, 2500);
+    }
+
+    // Close Popups
+    function closePopup() {
+      document.getElementById("errorPopup").style.display = "none";
+    }
+
+
+document.getElementById("yesButton").addEventListener("click", function() {
+        window.location.href = "envelope.html"; // Redirects to the message form page
+    });
+    // Page Navigation: Name Asking Page to Question Page
+    document.getElementById("nameSubmit").addEventListener("click", function() {
+      const name = document.getElementById("nameInput").value.trim().toLowerCase();
+      if (name === "pratikshya") {
+        document.getElementById("page1").classList.remove("active");
+        document.getElementById("questionPage").classList.add("active");
+      } else {
+        const errorMessage = document.getElementById("errorMessage");
+        errorMessage.classList.remove("hidden");
+        setTimeout(function() {
+          errorMessage.classList.add("hidden");
+        }, 3000);
+      }
+    });
+
+    document.querySelectorAll(".answerButton").forEach(button => {
+  button.addEventListener("click", function() {
+    const answer = button.getAttribute("data-answer");
+    if (answer === "all") {
+      document.getElementById("questionPage").classList.remove("active");
+      document.getElementById("correctPage").classList.add("active");
+    } else {
+      document.getElementById("errorAnswer").classList.remove("hidden");
+      
+      // Hide the error message after 1 second (1000 milliseconds)
+      setTimeout(function() {
+        document.getElementById("errorAnswer").classList.add("hidden");
+      }, 3000);
+    }
+  });
+});
+// Array of GIF URLs
+const gifs = [
+  "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTF3bmIzOGlsbzkwZjZoN2RmNnV3YmQ3cGN2cWFjZmZ0aThsZnZkNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ffzhLUixCtlsc/giphy.gif",  // GIF 1
+  "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXVha3E0bjNzYTJzaHB1ZHJpMnl5aWdta3V6bjY1bHo5d3o1eng4OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U1wMHRq7bnuInYaVlB/giphy.gif",  // GIF 2
+  "https://media.giphy.com/media/10rW4Xw9eO0RmU/giphy.gif?cid=ecf05e47l9ec040em396j4kjrjq9i3pnc7zn4jkyzrvoq2bj&ep=v1_gifs_search&rid=giphy.gif&ct=g"   // GIF 3
+];
+
+// Set initial GIF
+let currentGifIndex = 0;
+const questionCat = document.getElementById("questionCat");
+
+// Function to change the GIF every 3 seconds
+setInterval(function() {
+  currentGifIndex = (currentGifIndex + 1) % gifs.length;  // Cycle through the GIFs
+  questionCat.src = gifs[currentGifIndex];  // Change the image
+}, 3000);  // Change every 3000 milliseconds (3 seconds)
+
+
+    // Correct Answer Page to Original First Page
+    document.getElementById("proceedButton").addEventListener("click", function() {
+      document.getElementById("correctPage").classList.remove("active");
+      document.getElementById("page1AfterCorrect").classList.add("active");
+    });
+
+    // Final Page Button
+    document.getElementById("finalButton").addEventListener("click", function() {
+      document.getElementById("page1AfterCorrect").classList.remove("active");
+      document.getElementById("finalPage").classList.add("active");
+    });
+
+     
+  </script>
+</body>
+</html>
