@@ -245,7 +245,7 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: rgb(239, 182, 209);
+      background: rgb(219, 200, 209);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -303,7 +303,7 @@ body {
 
   <!-- Popup for Incorrect Answer -->
   <div id="errorPopup" class="popup">
-    <img src="https://media.giphy.com/media/5xtDarEgBDjEoWo6VRS/giphy.gif?cid=790b7611e7e50f2t8p8we0yk1wu04nmh6bvid5tuhv1mqs96&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Cat Holding Envelope">
+    <img src="https://media.giphy.com/media/zUQCyyZ3oqqzoC7IKu/giphy.gif?cid=ecf05e47pkxy0x54wy4g0n9e2vsimg7v4erdufai8e1oezaz&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Cat Holding Envelope">
     <p id="errorText">Byeee... This message is not for you. So you are kindly requested to leave this site👋.</p>
     <button onclick="closePopup()">OK</button>
   </div>
@@ -336,8 +336,8 @@ body {
 
   <!-- Final Page -->
 <div id="finalPage" class="page hidden">
-    <h1>Sorry 😅, There is no momo here but there is somethings for you!!😳</h1>
-    <img id="bear" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnRvbHNsaTByeWMxOHFnZDJ1cHZ2czJuMXMxM3VuaTYxemd0ajF1NSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MUS1XdqBxh09qvh78X/giphy.gif" alt="soemthings">
+    <h1>Sorry 😅, There is no momo here but there is somethings else for you!!😳</h1>
+    <img id="bear" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3Z3Y2ZiNmN3Z3pxM2tpMzZmMnJ0dmppemNmeTVseGRieDEyMHQ5eCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/nas460XGurr4JhTtnh/giphy.gif" alt="soemthings">
     <p>
         
     </p>
@@ -345,8 +345,6 @@ body {
 </div>
 
   <script>
-
-
 // Page 1 Name Validation
 document.getElementById("nameSubmit").addEventListener("click", function() {
       const name = document.getElementById("nameInput").value.trim().toLowerCase();
@@ -357,7 +355,7 @@ document.getElementById("nameSubmit").addEventListener("click", function() {
           document.getElementById("questionPage").classList.remove("hidden");
         }, 3000);
       } else {
-        showErrorPopup("Oops! This message is not for you. So you are kindly requested to leave this site👋.");
+        showErrorPopup("Oops! Looks like you’ve crashed the wrong party! 🚧 Kindly moonwalk out of here like nothing happened. 👋😆");
       }
     });
 
