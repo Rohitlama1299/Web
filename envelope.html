@@ -110,7 +110,7 @@
       margin-top: 20px;
       display: inline-block;
       box-shadow: 0 4px 10px rgba(255, 111, 97, 0.3);
-      margin-right: 10px; /* Add spacing between buttons */
+      margin-right: 10px; 
     }
 
     .messageButton:hover {
@@ -118,7 +118,7 @@
       transform: translateY(-3px);
     }
 
-    /* Animations */
+    
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -134,7 +134,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Mobile Responsiveness */
+    
     @media (max-width: 768px) {
       .container {
         padding: 20px;
@@ -147,7 +147,7 @@
       #paper {
         padding: 20px;
         font-size: 1rem;
-        max-height: 300px; /* Adjust height for smaller screens */
+        max-height: 400px;
       }
 
       .messageButton {
@@ -163,7 +163,7 @@
 
       #paper {
         padding: 15px;
-        max-height: 250px; /* Further adjust height for very small screens */
+        max-height: 350px; 
       }
 
       .messageButton {
@@ -178,35 +178,51 @@
     <div id="envelope"></div>
 
     <div id="paper">
-      <p>Hey Pratikshya! 💌</p>
-      <p><strong> you’re reading this, it means you survived whatever I made for you. Congrats! 🎉 How do you like it so far? I hope it’s not too cringy… but let’s be real, it probably is. Anyway, here it goes!</strong></p>
-      <p>You know, before meeting you, I hated Belgium. But then you showed up, and suddenly, Belgium didn’t seem so bad. In fact, it’s kinda growing on me now. Who knew a person could change your entire opinion about a country? You’re like the human version of Belgian chocolate—sweet, addictive, and probably bad for my health. 😂</p>
-      <p>Remember the first day we met in class? We were complete strangers. Like, awkward small talk strangers. And now? Here I am, writing this cringy letter to you. Life’s weird, huh? But you know what’s even weirder? The way you talked to me that day made me feel like I’d known you forever. Like, who are you? A wizard? A time traveler? Or just someone who’s really good at making people feel comfortable? Either way, I’m impressed.</p>
-      <p>And your jokes? Oh my god, your jokes. They’re so bad they’re good. Like, why do I laugh every time? I think it’s because you deliver them with that cheeky grin of yours. It’s impossible not to laugh. You’ve literally made me look forward to coming to class just so I can hear your next terrible punchline. Who does that? You do, apparently.</p>
-      <p>What I like most about you (aside from your questionable sense of humor) is how easy you are to talk to. You’re like a human stress ball—squeeze you, and all my worries disappear. Plus, you’re funny (obviously), kind, and let’s not forget… cute. Like, out-of-this-world cute. I mean, come on, it’s not fair. How am I supposed to focus on anything when you’re around?</p>
-      <p>I love it when you come over to my place. It’s like my house suddenly becomes 100% more fun. You bring this energy that just lights up the room. Honestly, I could spend hours talking to you about absolutely nothing and still have the best time. So, please, visit more often. My house (and I) miss you when you’re not around.</p>
-      <p><strong>“And yeah, I don’t even know how it happened, but I fell for you. Like, hard. In such a short time, you’ve become someone I can’t stop thinking about. So, here it is: I like you. Like, really like you. And I hope that doesn’t freak you out…”</strong></p>
-      <p><b>But I have to ask… do you feel the same way?</b></p>
-      <button class="messageButton" id="yesButton">Yes <i class="fas fa-arrow-right"></i></button>
-      <button class="messageButton" id="noButton">No <i class="fas fa-arrow-right"></i></button>
-    </div>
+      <p>Oi Pratikshya! 💌</p>
+      <p><b>How’s it going? 😄 I hope you're doing well! So, what do I have in store for you? 🤔 Are you curious about what I’ve written? Well, here it is! If you’re reading this, it means you survived whatever I’ve cooked up for you—congrats! 🎉 So, how’s it going so far? I hope it’s not too cringy... but, let’s be honest, it probably is. 🙈 Anyway, here it goes!</b></p>
+      <p>You know, before meeting you, I didn't like Belgium that much. 🇧🇪 But then you showed up, and suddenly, Belgium didn’t seem so bad. In fact, it’s kinda growing on me now. Who knew a person could change your entire opinion about a country? You’re like the human version of Belgian chocolate—sweet, addictive, and probably bad for my health. 🍫😂</p>
+      <p>Remember the first day we met in class? We were total strangers—except, instead of the usual awkward small talk, we skipped straight to roasting each other like we’d been lifelong rivals in a past life. 🔥 Honestly, I’m still confused… did we actually meet that day, or were we just continuing a conversation from a parallel universe? 🤔✨</p>
+      <p>And your jokes? Oh my god, your jokes. They’re so bad they’re good. 😂 Like, why do I laugh every time? I think it’s because you deliver them with that cheeky grin of yours. 😏 It’s impossible not to laugh. You’ve literally made me look forward to coming to class just so I can hear your next terrible punchline. Who does that? You do, apparently. 😆</p>
+      <p>What I like most about you (aside from your questionable sense of humor) is how easy you are to talk to. 🗣️ You’re like a human stress ball—squeeze you, and all my worries disappear. 🧸 Plus, you're funny (obviously), kind, and—let's not forget... ridiculously cute. 🥰 Honestly, it's hard to focus on anything when you're around... especially when I catch you flashing that adorable smile 😁 and those cute cheeks. Seriously, they have a magical effect! 💫</p>
+      <p>I love it when you come over to my place. 🏠 It’s like my house suddenly becomes 100% more fun. 🎉 You bring this energy that just lights up the room. Honestly, I could spend hours talking to you about absolutely nothing and still have the best time. So, please, visit more often. My house (and I) miss you when you’re not around. 😢</p>
+      <p><strong>“And yeah, I don’t even know how it happened, but I fell for you. Like, hard. ❤️ In such a short time, you’ve become someone I can’t stop thinking about. So, here it is: I like you. Like, really like you. 😍 And I hope that doesn’t freak you out…”</strong></p>
+      <p><b>But I have to ask… do you feel the same way? 💭</b></p>
+      <button class="messageButton" id="yesButton">Yes 😘 <i class="fas fa-arrow-right"></i></button>
+      <button class="messageButton" id="noButton">No 😕 <i class="fas fa-arrow-right"></i></button>
+      <br>
+      <p style="opacity: 0; transition: opacity 2s; font-weight: bold; margin-top: 10px;" id="hiddenMessage">P.S. If you’re smiling right now, that’s all I need to know. 😊</p>
+    </div>    
   </div>
 
   <script>
     // Envelope click functionality
-    document.getElementById("envelope").addEventListener("click", function() {
-      document.getElementById("paper").style.display = "block"; // Reveal the paper
-      document.getElementById("envelope").style.display = "none"; // Hide the envelope
-    });
+document.getElementById("envelope").addEventListener("click", function() {
+  document.getElementById("paper").style.display = "block"; // Reveal the paper
+  document.getElementById("envelope").style.display = "none"; // Hide the envelope
+});
 
-    // Redirect to another page when either button is clicked
-    document.getElementById("yesButton").addEventListener("click", function() {
-      window.location.href = "message.html"; // Replace with your next page link
-    });
+// Redirect to another page when either button is clicked
+document.getElementById("yesButton").addEventListener("click", function() {
+  window.location.href = "message.html"; // Replace with your next page link
+});
 
-    document.getElementById("noButton").addEventListener("click", function() {
-      window.location.href = "message.html"; // Replace with your next page link
-    });
+document.getElementById("noButton").addEventListener("click", function() {
+  window.location.href = "message.html"; // Replace with your next page link
+});
+
+// IntersectionObserver to reveal hidden message when in view
+const hiddenMessage = document.getElementById('hiddenMessage');
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      hiddenMessage.style.opacity = 1; // Fade in the hidden message
+      observer.unobserve(entry.target); // Stop observing after it becomes visible
+    }
+  });
+}, { threshold: 0.1 }); // Trigger when 10% of the element is in view
+
+observer.observe(hiddenMessage); // Start observing the hidden message
+
   </script>
 </body>
 </html>
