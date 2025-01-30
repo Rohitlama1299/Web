@@ -443,7 +443,12 @@ setInterval(function() {
       document.getElementById("finalPage").classList.add("active");
     });
 
-     
+    if (window.location.pathname === "/envelope") {
+        window.location.replace("/envelope.html");
+    } else if (window.location.pathname === "/message") {
+        window.location.replace("/message.html");
+    }
+
   </script>
 </body>
 </html>
