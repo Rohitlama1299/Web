@@ -71,6 +71,21 @@
       color: #333;
       text-align: left;
       animation: slideUp 0.5s ease-in-out;
+      max-height: 400px; /* Limit height for scrollable area */
+      overflow-y: auto; /* Enable vertical scrolling */
+      position: relative;
+    }
+
+    /* Fade effect at the bottom of the scrollable area */
+    #paper::after {
+      content: '';
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: linear-gradient(to bottom, rgba(255, 245, 245, 0), rgba(255, 245, 245, 1));
+      pointer-events: none;
     }
 
     #paper p {
@@ -132,6 +147,7 @@
       #paper {
         padding: 20px;
         font-size: 1rem;
+        max-height: 300px; /* Adjust height for smaller screens */
       }
 
       .messageButton {
@@ -147,6 +163,7 @@
 
       #paper {
         padding: 15px;
+        max-height: 250px; /* Further adjust height for very small screens */
       }
 
       .messageButton {
@@ -161,10 +178,15 @@
     <div id="envelope"></div>
 
     <div id="paper">
-      <p>Hey there! 💌</p>
-      <p>You’ve just unlocked a sweet message from me! Here’s what I have for you:</p>
-      <p><strong>“I like you..”</strong></p>
-      <p> <3</p>
+      <p>Hey Pratikshya! 💌</p>
+      <p><strong> you’re reading this, it means you survived whatever I made for you. Congrats! 🎉 How do you like it so far? I hope it’s not too cringy… but let’s be real, it probably is. Anyway, here it goes!</strong></p>
+      <p>You know, before meeting you, I hated Belgium. But then you showed up, and suddenly, Belgium didn’t seem so bad. In fact, it’s kinda growing on me now. Who knew a person could change your entire opinion about a country? You’re like the human version of Belgian chocolate—sweet, addictive, and probably bad for my health. 😂</p>
+      <p>Remember the first day we met in class? We were complete strangers. Like, awkward small talk strangers. And now? Here I am, writing this cringy letter to you. Life’s weird, huh? But you know what’s even weirder? The way you talked to me that day made me feel like I’d known you forever. Like, who are you? A wizard? A time traveler? Or just someone who’s really good at making people feel comfortable? Either way, I’m impressed.</p>
+      <p>And your jokes? Oh my god, your jokes. They’re so bad they’re good. Like, why do I laugh every time? I think it’s because you deliver them with that cheeky grin of yours. It’s impossible not to laugh. You’ve literally made me look forward to coming to class just so I can hear your next terrible punchline. Who does that? You do, apparently.</p>
+      <p>What I like most about you (aside from your questionable sense of humor) is how easy you are to talk to. You’re like a human stress ball—squeeze you, and all my worries disappear. Plus, you’re funny (obviously), kind, and let’s not forget… cute. Like, out-of-this-world cute. I mean, come on, it’s not fair. How am I supposed to focus on anything when you’re around?</p>
+      <p>I love it when you come over to my place. It’s like my house suddenly becomes 100% more fun. You bring this energy that just lights up the room. Honestly, I could spend hours talking to you about absolutely nothing and still have the best time. So, please, visit more often. My house (and I) miss you when you’re not around.</p>
+      <p><strong>“And yeah, I don’t even know how it happened, but I fell for you. Like, hard. In such a short time, you’ve become someone I can’t stop thinking about. So, here it is: I like you. Like, really like you. And I hope that doesn’t freak you out…”</strong></p>
+      <p><b>But I have to ask… do you feel the same way?</b></p>
       <button class="messageButton" id="yesButton">Yes <i class="fas fa-arrow-right"></i></button>
       <button class="messageButton" id="noButton">No <i class="fas fa-arrow-right"></i></button>
     </div>
