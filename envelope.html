@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Message to You</title>
+  <title>Sweet Message to You</title>
   <style>
     /* General Styles */
     body {
@@ -28,6 +28,15 @@
       max-width: 500px;
       animation: fadeIn 1s ease-in-out;
     }
+     /* Logo Styles */
+     .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      height: auto;
+    }
+
 
     /* Envelope Styles */
     #envelope {
@@ -139,6 +148,9 @@
       .container {
         padding: 20px;
       }
+      .logo {
+        width: 40px;
+      }
 
       #envelope {
         height: 150px;
@@ -160,6 +172,9 @@
       #envelope {
         height: 130px;
       }
+      .logo {
+        width: 30px;
+      }
 
       #paper {
         padding: 15px;
@@ -174,17 +189,18 @@
   </style>
 </head>
 <body>
+  <a href="extra.html"><img src="logo.webp" alt="Logo" class="logo"> <!-- Add your logo source --></a>
+
   <div class="container">
     <div id="envelope"></div>
 
     <div id="paper">
-      <p>Oi Pratikshya! </p>
-      <p><b>How’s it going? 😄 I hope you're doing well! So, what do I have in store for you? 🤔 Are you curious about what I’ve written? Well, here it is! If you’re reading this, it means you survived whatever I’ve cooked up for you—congrats! 🎉 So, how’s it going so far? I hope it’s not too cringy... but, let’s be honest, it probably is. 🙈</b></p>
-      <p>P.S. If you’re smiling right now, my job here is done! 😁✨ </p>
+      <p>Oi Pratikshya! 💌</p>
+      <p><b>How’s it going? 😄 I hope you're doing well! So, what do I have in store for you? 🤔 Are you curious about what I’ve written? Well, here it is! If you’re reading this, it means you survived whatever I’ve cooked up for you—congrats! 🎉 So, how’s it going so far? I hope it’s not too cringy... but, let’s be honest, it probably is. 🙈 Anyway, here it goes!</b></p>
+      <p>P.S. If you’re smiling right now, that’s all I need to know. 😊</p>
       <button class="messageButton" id="yesButton">Next <i class="fas fa-arrow-right"></i></button>
-      
       <br>
-     
+      
     </div>    
   </div>
 
